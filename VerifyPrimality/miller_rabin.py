@@ -4,7 +4,8 @@ class MillerRabin:
 
     @staticmethod
     def testPrimality(n: int, number_of_rounds: int = 1) -> str:
-        assert(isinstance(n, int) and isinstance(number_of_rounds, int)), f"Both parameters must be integers. Failed parameters: {n}, {number_of_rounds}" 
+        assert(isinstance(n, int) and isinstance(number_of_rounds, int)
+               ) ,f"Both parameters must be integers. Parameters when failed: {n}, {number_of_rounds}" 
         assert(n >= 3 and n % 2 != 0), f"Input at MillerRabin.testPrimality(1) must be odd and greater than 2. Failed value: {n}."
         assert(number_of_rounds >= 1), f"The number of rounds must be a positive integer. Failed value: {number_of_rounds}"
 
