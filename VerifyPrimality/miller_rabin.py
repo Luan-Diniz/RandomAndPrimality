@@ -1,21 +1,25 @@
-import random
+from random import randint
 
 class MillerRabin:
 
     @staticmethod
-    def testPrimality(n: int) -> str:
-        assert(n >= 3 and n % 2 != 0), f"Input at MillerRabin.testPrimality(1) should be odd and greater than 3. Failed value: {n}."
-        k, m = MillerRabin.__findKandM(n)
-        a = random.randint(1, n-1)
-        b = (a ** m) % n             
+    def testPrimality(n: int, number_of_rounds: int = 1) -> str:
+        assert(isinstance(n, int) and isinstance(number_of_rounds, int)), f"Both parameters must be integers. Failed parameters: {n}, {number_of_rounds}" 
+        assert(n >= 3 and n % 2 != 0), f"Input at MillerRabin.testPrimality(1) must be odd and greater than 2. Failed value: {n}."
+        assert(number_of_rounds >= 1), f"The number of rounds must be a positive integer. Failed value: {number_of_rounds}"
 
-        if b % n == 1:
-            return "Probably prime"
-        for _ in range(0, k):    # Iterates k times.
-            if (b % n == n-1):
+        for _ in range(0, number_of_rounds):
+            k, m = MillerRabin.__findKandM(n)
+            a = randint(1, n-1)
+            b = (a ** m) % n             
+
+            if b % n == 1:
                 return "Probably prime"
-            else:
-                b = b**2 % n
+            for _ in range(0, k):    # Iterates k times.
+                if (b % n == n-1):
+                    return "Probably prime"
+                else:
+                    b = b**2 % n
         return "Composite"
 
 
