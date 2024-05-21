@@ -2,6 +2,7 @@ import unittest, pprint
 from random import randint
 from fermat_primality_test import FermatPrimalityTest
 
+
 class TestFermatPrimalityTest(unittest.TestCase):
 
     def test_prime_number(self):

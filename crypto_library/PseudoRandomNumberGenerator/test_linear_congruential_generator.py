@@ -1,6 +1,7 @@
 import unittest
 from linear_congruential_generator import LinearCongruentialGenerator
 
+
 class TestLinearCongruentialGenerator(unittest.TestCase):
 
     def test_number_generation(self):

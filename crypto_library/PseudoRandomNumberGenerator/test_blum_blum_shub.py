@@ -1,6 +1,7 @@
 import unittest
 from blum_blum_shub import BlumBlumShub
 
+
 class TestBlumBlumShub(unittest.TestCase):
     def test_number_generation(self):
         result = []

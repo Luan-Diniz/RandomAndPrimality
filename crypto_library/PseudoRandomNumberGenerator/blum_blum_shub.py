@@ -1,6 +1,11 @@
 from collections.abc import Iterator
+try:
+    from crypto_library.PseudoRandomNumberGenerator.type_random_number_generator import RandomNumberGenerator
+except ModuleNotFoundError:
+    from type_random_number_generator import RandomNumberGenerator      # For unit testing.
 
-class BlumBlumShub:
+
+class BlumBlumShub(RandomNumberGenerator):
 
     def __init__(self, Xo: int, p: int, q: int) -> None:
         assert all(isinstance(i, int) for i in (Xo, p, q)

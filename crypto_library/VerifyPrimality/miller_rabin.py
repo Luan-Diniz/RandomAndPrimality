@@ -1,6 +1,11 @@
 from random import randint
+try:
+    from crypto_library.VerifyPrimality.type_primality_tester import PrimalityTester
+except ModuleNotFoundError:
+    from type_primality_tester import PrimalityTester
 
-class MillerRabin:
+
+class MillerRabin(PrimalityTester):
 
     @staticmethod
     def testPrimality(n: int, number_of_rounds: int = 1) -> str:
