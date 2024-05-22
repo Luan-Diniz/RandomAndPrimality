@@ -16,8 +16,8 @@ class MillerRabin(PrimalityTester):
 
         for _ in range(0, number_of_rounds):
             k, m = MillerRabin.__findKandM(n)
-            a = randint(1, n-1)
-            b = (a ** m) % n             
+            a = randint(1, n-1) 
+            b = pow(a, m, n)   #b = (a ** m) % n    
 
             if b % n == 1:
                 return "Probably prime"
@@ -25,7 +25,7 @@ class MillerRabin(PrimalityTester):
                 if (b % n == n-1):
                     return "Probably prime"
                 else:
-                    b = b**2 % n
+                    b = pow(b,2,n) # b = b**2 % n
         return "Composite"
 
 

@@ -20,6 +20,6 @@ class FermatPrimalityTest(PrimalityTester):
 
         for _ in range(0, number_of_rounds):   
             a = randint(2, n-2)
-            if (a**(n-1) % n != 1):
+            if(pow(a,(n-1),n) != 1):        # (a**(n-1) % n != 1)
                 return "Composite"
         return "Probably prime"
