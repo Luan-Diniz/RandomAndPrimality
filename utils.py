@@ -15,12 +15,11 @@ first_primes_list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
 
 def FindPrimeNumberWithSpecificSize(number_size: int, 
                                     used_function: Callable[[None], str], size_output_number_generator: int,
-                                    number_generator: RandomNumberGenerator, number_rounds: int = 5) -> int:
+                                    number_generator: RandomNumberGenerator, number_rounds: int = 20) -> int:
     # used_function is instance of PrimalityTester
 
     while True:
-        #random_number = RandomOddNumberWithSpecificSize(number_size, size_output_number_generator, number_generator)
-        random_number = randint(2**(number_size-1)+1, 2**number_size-1)
+        random_number = RandomOddNumberWithSpecificSize(number_size, size_output_number_generator, number_generator)
         if (random_number % 2 == 0):
             random_number += 1
         for prime in first_primes_list:

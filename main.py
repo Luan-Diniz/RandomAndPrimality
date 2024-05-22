@@ -5,7 +5,7 @@ from datetime import datetime
 
 if __name__ == '__main__':
     #sizes = [40, 56, 80, 128, 168, 224, 256, 512, 1024, 2048, 4096]
-    sizes = [80]
+    sizes = [4096]
 
     #TODO: 
     # Measure of execution time to create the random numbers and test its primality.

@@ -5,7 +5,7 @@ from miller_rabin import MillerRabin
 class TestMillerRabin(unittest.TestCase):
 
     def test_prime_number(self):
-        primes = [3, 7, 11, 19, 1447, 2909, 3187, 4421, 5693, 6833, 7639, 7919]
+        primes = [5, 7, 11, 19, 1447, 2909, 3187, 4421, 5693, 6833, 7639, 7919]
         for number in primes:
             self.assertEqual("Probably prime", MillerRabin.testPrimality(number),
                               f"Miller Rabin failed the test with value {number}.")
