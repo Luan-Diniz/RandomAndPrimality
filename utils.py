@@ -14,12 +14,18 @@ first_primes_list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
 
 
 def FindPrimeNumberWithSpecificSize(number_size: int, 
-                                    used_function: Callable[[None], str], size_output_number_generator: int,
-                                    number_generator: RandomNumberGenerator, number_rounds: int = 20) -> int:
+                                    used_function: Callable[[None], str],
+                                    size_output_number_generator: int,
+                                    number_generator: RandomNumberGenerator,
+                                    number_rounds: int = 20) -> int:
     # used_function is instance of PrimalityTester
 
     while True:
-        random_number = RandomOddNumberWithSpecificSize(number_size, size_output_number_generator, number_generator)
+        random_number = RandomOddNumberWithSpecificSize(
+                                                        number_size,
+                                                        size_output_number_generator,
+                                                        number_generator
+                                                        )
         if (random_number % 2 == 0):
             random_number += 1
         for prime in first_primes_list:
@@ -29,14 +35,22 @@ def FindPrimeNumberWithSpecificSize(number_size: int,
             return random_number
             
 
-def RandomOddNumberWithSpecificSize(expected_output_size: int, size_output_number_generator: int, number_generator: RandomNumberGenerator) -> int:
+def RandomOddNumberWithSpecificSize(expected_output_size: int,
+                                    size_output_number_generator: int,
+                                    number_generator: RandomNumberGenerator) -> int:
     # expected_output_size - 1 because the LSB will be 1.
-    number = RandomNumberWithSpecificSize(expected_output_size - 1, size_output_number_generator, number_generator)
+    number = RandomNumberWithSpecificSize(
+                                            expected_output_size - 1,
+                                            size_output_number_generator,
+                                            number_generator
+                                        )
 
     return int(bin(number) + '1',2)  # LSB is 1, so the number is odd
 
 
-def RandomNumberWithSpecificSize(expected_output_size: int, size_output_number_generator: int, number_generator: RandomNumberGenerator) -> int:
+def RandomNumberWithSpecificSize(expected_output_size: int,
+                                size_output_number_generator: int,
+                                number_generator: RandomNumberGenerator) -> int:
 
     remaining_bits = expected_output_size - 1    # MSB is 1, that's why -1 in this line.
     output_number = '0b1'
