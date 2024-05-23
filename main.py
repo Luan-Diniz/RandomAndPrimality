@@ -6,7 +6,6 @@ from time import time
 if __name__ == '__main__':
     sizes = [40, 56, 80, 128, 168, 224, 256, 512, 1024, 2048, 4096]
     
-    """
     #######################################################################################
     # Measuring the time for generating one number of each size.
 
@@ -103,8 +102,7 @@ if __name__ == '__main__':
     print(f"Total Time Miller-Rabin: {end_time_all_primes - start_time_all_primes}s")
     print("-------------------------------------------------------------")
     print()
-    """
-    lcg = LinearCongruentialGenerator(randint(0, 1000000) ,2**32,1664525,1013904223)  #DELETE THIS LINE
+
     #######################################################################################
     # Measuring the average time for generating a prime number of specific size.
     # Note: The generation time of a random number has little impact on the total execution time. 
