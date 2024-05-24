@@ -28,7 +28,7 @@ class TestFermatPrimalityTest(unittest.TestCase):
                 if FermatPrimalityTest.testPrimality(number) == "Probably prime":
                     carmichael_numbers[number] += 1
         print()
-        print("Carmichael number : times it passed the Miller-Rabin test.")
+        print("Fermat Pseudoprimes : times it passed the Fermat Primality Test test.")
         pprint.PrettyPrinter(width = 40, depth= 2).pprint(carmichael_numbers)
         print()
 
