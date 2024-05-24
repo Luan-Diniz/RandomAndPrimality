@@ -145,4 +145,3 @@ if __name__ == '__main__':
         print(f"All measured times: {iterations_time}")
         print("-------------------------------------------------------------")
         print()
-
