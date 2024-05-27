@@ -15,7 +15,7 @@ class MillerRabin(PrimalityTester):
         assert(number_of_rounds >= 1), f"The number of rounds must be a positive integer. Failed value: {number_of_rounds}"
 
 
-        s, d = MillerRabin.__findKandM(n)
+        s, d = MillerRabin.__findSandD(n)
 
         for _ in range(0, number_of_rounds):
             a = randint(2, n-2)
@@ -29,9 +29,8 @@ class MillerRabin(PrimalityTester):
                 return "Composite"
         return "Probably prime"
     
-
     @staticmethod
-    def __findKandM(n: int) -> tuple[int, int]:     # n - 1 == 2**k * m
+    def __findSandD(n: int) -> tuple[int, int]:     # n - 1 == 2**k * m
         k = 0
         m = 0
         n = n-1
