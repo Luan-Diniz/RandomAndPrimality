@@ -30,17 +30,17 @@ class MillerRabin(PrimalityTester):
         return "Probably prime"
     
     @staticmethod
-    def __findSandD(n: int) -> tuple[int, int]:     # n - 1 == 2**k * m
-        k = 0
-        m = 0
+    def __findSandD(n: int) -> tuple[int, int]:     # n - 1 == 2**s * d
+        s = 0
+        d = 0
         n = n-1
 
         while True:
             if (n % 2 == 0):
-                k += 1
+                s += 1
                 n = n // 2
             else:
-                m = n
+                d = n
                 break
         
-        return (k, m)
+        return (s, d)
