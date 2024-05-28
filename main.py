@@ -30,7 +30,7 @@ if __name__ == '__main__':
         print("Blum Blum Shub")
         print(f"Size: {size} bits")
         start_time = time()
-        bbs = BlumBlumShub(randint(0, 1000000), 3263052707, 5847777359)   # p = 3263052707, q = 5847777359
+        bbs = BlumBlumShub(randint(2, 1000000), 3263052707, 5847777359)   # p = 3263052707, q = 5847777359
         number = RandomNumberWithSpecificSize(size, 64, bbs)
         end_time = time()
         print(f"Execution time:  {(end_time - start_time)}s")
